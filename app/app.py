@@ -1,7 +1,7 @@
 #!/bin/python
 
 from flask import Flask
-import os
+import os, json
 
 
 app = Flask(__name__)
@@ -11,7 +11,10 @@ def hello():
     
     var = os.uname()
 
-    return var
+    return {
+        "status": 200,
+        "body": var
+    }
 
 if __name__ == "__main__":
     app.run(debug=True)
