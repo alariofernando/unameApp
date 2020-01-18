@@ -4,4 +4,5 @@ COPY ./app /app
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 RUN chmod +x ./app/app.py
-ENTRYPOINT [ "python /app/app.py" ]
+ENTRYPOINT [ "python3" ]
+CMD ["/app/app.py"]
