@@ -11,6 +11,14 @@ def hello():
     
     var = os.uname()
 
+    uname = {
+        "OS": var[0],
+        "Hostname": var[1],
+        "Kernel Version": var[2],
+        "Kernel and Build Time": var[3],
+        "Arch": var[4]
+    }
+
     return {
         "status": 200,
         "body": var
