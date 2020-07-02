@@ -1,6 +1,6 @@
 #!/bin/python
 
-from flask import Flask
+from flask import Flask, jsonify
 import os, json
 
 
@@ -11,18 +11,10 @@ def hello():
     
     var = os.uname()
 
-    uname = {
-        "OS": var[0],
-        "Hostname": var[1],
-        "Kernel Version": var[2],
-        "Kernel and Build Time": var[3],
-        "Arch": var[4]
-    }
-
-    return {
+    return jsonify({
         "status": 200,
-        "body": var
-    }
+        "body": f"{var}"
+    })
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",
